@@ -5,7 +5,7 @@ Sitecore started providing assembly list information for Sitecore releases start
 ## Installation
 
 ```
-PS> Install-Module SitecoreAssemblyLists
+PS> Install-Module SitecoreAssemblyList
 ```
 
 ## Usage
