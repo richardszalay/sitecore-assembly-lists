@@ -18,7 +18,7 @@ Test-SitecoreAssemblyList `
 
 Returns `$true` if all assemblies in the list were found in the directory and had the correct assembly and file version.
 
-If the `-PassThru` is supplied, returns an object with properties containing the `Total` and `Failed` number of assemblies.
+If the `-PassThru` switch is supplied, returns an object with properties containing the `Total` and `Failed` number of assemblies.
 
 In both cases, missing assemblies and version mismatches emitted as warnings.
 
@@ -28,7 +28,7 @@ New-SitecoreAssemblyList `
     -FilePath ".\Sitecore.Platform.Assemblies 7.2.0 rev. 1501021.txt"
 ```
 
-Generates a new Sitecore assembly list for all assemblies in a folder. Useful for working with a version of Sitecore before 8.2u5, when Sitecore began making the lists available for download.
+Generates a new Sitecore assembly list for all assemblies in a folder. Useful when working with versions of Sitecore before 8.2u5, when Sitecore began making the lists available for download.
 
 # MSBuild Targets
 
