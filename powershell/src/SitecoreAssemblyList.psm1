@@ -117,7 +117,7 @@ function Test-SitecoreAssemblyList {
 }
 
 function New-SitecoreAssemblyList {
-    [CmdletBinding()]
+    #[CmdletBinding()]
     param(
         [string]$AssemblyFolder,
         [string]$FilePath,
