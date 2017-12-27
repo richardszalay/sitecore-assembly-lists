@@ -1,4 +1,4 @@
-Import-Module "$PSScriptRoot\..\src\SitecoreAssemblyList.psd1" -Scope Local -Force | Out-Null
+Import-Module "$PSScriptRoot\..\src\SitecoreAssemblyList\SitecoreAssemblyList.psd1" -Scope Local -Force | Out-Null
 
 # Just a few high level acceptance tests
 Describe "Acceptance fixture" {
