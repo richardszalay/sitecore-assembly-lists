@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>RichardSzalay.Sitecore.AssemblyList.MSBuild</id>
+        <version>0.1</version>
+        <description>MSBuild extensions for verifying assemblies against a Sitecore assembly list, or exclding them from publish.</description>
+        <authors>Richard Szalay</authors>
+        <projectUrl>https://github.com/richardszalay/sitecore-assembly-lists</projectUrl>
+        <licenseUrl>https://github.com/richardszalay/sitecore-assembly-lists/blob/master/LICENSE</licenseUrl>
+        <tags>sitecore assemblies build publish</tags>
+    </metadata>
+    
+    <files>
+        <file src="targets\**\*.targets" exclude="targets\tests\**\*.targets" target="build" />
+        <file src="targets\*.dll" target="build" />
+    </files>
+</package>

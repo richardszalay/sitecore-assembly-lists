@@ -1,0 +1,5 @@
+<Project>
+    <ItemGroup>
+        <SitecoreAssemblyLists Include="$(MSBuildProjectDirectory)\..\..\..\..\..\fixtures\acceptance-list.txt" />
+    </ItemGroup>
+</Project>

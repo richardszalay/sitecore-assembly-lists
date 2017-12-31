@@ -1,0 +1,23 @@
+<Project>
+
+  <PropertyGroup>
+    <VerifySitecoreAssemblyVersions Condition="'$(VerifySitecoreAssemblyVersions)' == ''">true</VerifySitecoreAssemblyVersions>
+  </PropertyGroup>
+
+  <Target Name="ResolveSitecoreAssemblies" AfterTargets="AfterResolveReferences">
+    <Error Text="No Sitecore assembly lists defined. Include lists using &lt;ItemGroup>&lt;SitecoreAssemblyLists Include=&quot;list.txt&quot; />&lt;/ItemGroup>"
+           Condition="'@(SitecoreAssemblyLists)'==''" />
+
+    <ResolveSitecoreAssemblies
+      AssemblyLists="@(SitecoreAssemblyLists)"
+      Assemblies="@(ReferencePath)"
+      VerifyAssemblies="$(VerifySitecoreAssemblyVersions)"
+      >
+      <Output TaskParameter="SitecoreAssemblies" ItemName="SitecoreAssemblies" />
+    </ResolveSitecoreAssemblies>
+  </Target>
+
+  <Import Project="$(MSBuildProjectDirectory)\SitecoreAssemblyLists.props" Condition="Exists('$(MSBuildProjectDirectory)\SitecoreAssemblyLists.props')" />
+
+  <UsingTask TaskName="ResolveSitecoreAssemblies" AssemblyFile="RichardSzalay.Sitecore.AssemblyList.Tasks.dll"/>
+</Project>
