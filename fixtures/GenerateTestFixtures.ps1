@@ -33,13 +33,18 @@ function New-MockAssembly {
 
 $ErrorActionPreference = "Stop"
 
-$fixturesRoot = Resolve-Path "$PSScriptRoot\..\fixtures"
+$fixturesRoot = Resolve-Path "$PSScriptRoot"
 
 $acceptanceFixturesRoot = Join-Path $fixturesRoot "acceptance"
-
 mkdir -Path $acceptanceFixturesRoot -ErrorAction SilentlyContinue
-
 New-MockAssembly -FilePath "$acceptanceFixturesRoot\Test1.dll" -Version "1.0.0.0" -FileVersion "1.2.3.4"
 New-MockAssembly -FilePath "$acceptanceFixturesRoot\Test2.dll" -Version "2.1.0.0"
 New-MockAssembly -FilePath "$acceptanceFixturesRoot\Test3.dll" -Version "3.0.1.0" -FileVersion "1.2.3.04"
 New-MockAssembly -FilePath "$acceptanceFixturesRoot\Test4.dll" -Version "4.0.0.1" -FileVersion "1.2.3"
+
+$acceptanceFixturesRoot = Join-Path $fixturesRoot "acceptance-alt"
+mkdir -Path $acceptanceFixturesRoot -ErrorAction SilentlyContinue
+New-MockAssembly -FilePath "$acceptanceFixturesRoot\Test1.dll" -Version "2.0.0.0" -FileVersion "2.2.3.4"
+New-MockAssembly -FilePath "$acceptanceFixturesRoot\Test2.dll" -Version "2.2.0.0"
+New-MockAssembly -FilePath "$acceptanceFixturesRoot\Test3.dll" -Version "3.0.2.0" -FileVersion "1.3.3.04"
+New-MockAssembly -FilePath "$acceptanceFixturesRoot\Test4.dll" -Version "4.0.0.2" -FileVersion "1.2.4"
