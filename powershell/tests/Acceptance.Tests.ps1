@@ -4,8 +4,19 @@ $fixturesRoot = "$PSScriptRoot\..\..\fixtures"
 
 # Just a few high level acceptance tests
 Describe "Acceptance fixture" {
+    
+
     Context "when testing the acceptance assembly list" {
         $result = Test-SitecoreAssemblyList -AssemblyList "$fixturesRoot\acceptance-list.txt" -AssemblyFolder "$fixturesRoot\acceptance"
+         
+        It "successfully validates" {
+            $result | Should Be $true
+        }
+    }
+
+    # Same as the happy path test above, but with an overridden pipe separater to test support for "sep=|"
+    Context "when testing the acceptance assembly list with a custom separator" {
+        $result = Test-SitecoreAssemblyList -AssemblyList "$fixturesRoot\list-with-metadata.txt" -AssemblyFolder "$fixturesRoot\acceptance"
          
         It "successfully validates" {
             $result | Should Be $true

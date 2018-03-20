@@ -10,8 +10,16 @@ function ParseAssemblyList($file)
 {
     $lines = Get-Content $file
 
-    $lines | Select-Object -Skip 1 | Foreach-Object {
-        $parts = $_ -split ","
+    if ($lines[0] -like "sep=*") {
+        $sep = $lines[0].Substring(4)
+        $skip = 2
+    } else {
+        $sep = ","
+        $skip = 1
+    }
+
+    $lines | Select-Object -Skip $skip | Foreach-Object {
+        $parts = $_ -split $sep,0,"SimpleMatch"
         @{ 
             Assembly = ($parts[0]);
             FileVersion = $parts[1];
