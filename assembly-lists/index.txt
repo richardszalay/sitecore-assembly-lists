@@ -1,0 +1,4 @@
+ProductName,AssemblyList,Assembly,AssemblyVersion,FileVersion
+XP,Sitecore.Platform.Assemblies 9.0.0 rev. 171002.txt,Sitecore.Kernel.dll,11.1.0.0,11.1.0.369
+XP,Sitecore.Platform.Assemblies 8.2 rev. 171121.txt,Sitecore.Kernel.dll,10.0.0.0,10.0.8.560
+XP,Sitecore.Platform.Assemblies 8.2 rev.170728.txt,Sitecore.Kernel.dll,10.0.0.0,10.0.7.479

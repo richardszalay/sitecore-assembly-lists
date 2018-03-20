@@ -63,6 +63,7 @@
     <Compile Include="AssemblyInfoTests.cs" />
     <Compile Include="AssemblyListTests.cs" />
     <Compile Include="FakeBuildEngine.cs" />
+    <Compile Include="LoadDefaultAssemblyListsTests.cs" />
     <Compile Include="ResolveSitecoreAssembliesTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

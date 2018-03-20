@@ -1,0 +1,2 @@
+ProductName,AssemblyList,Assembly,AssemblyVersion,FileVersion
+Test,acceptance-list.txt,Test1.dll,1.0.0.0,1.2.3.4
